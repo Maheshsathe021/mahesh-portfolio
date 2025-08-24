@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Portfolio</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="">
+
+  <style>
+    /* Base Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #0f172a, #1e293b);
+      color: #f1f5f9;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Header Animation */
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #1e293b;
+      color: #38bdf8;
+      animation: slideDown 1.5s ease;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    header .logo {
+      font-size: 2.5rem;
+      font-weight: 700;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #38bdf8; }
+      to { text-shadow: 0 0 20px #38bdf8; }
+    }
+
+    header .tagline {
+      margin: 0.5rem 0 1.5rem;
+      font-style: italic;
+      color: #fbbf24;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #f1f5f9;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #38bdf8;
+      text-shadow: 0 0 10px #38bdf8;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 2rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fbbf24;
+    }
+
+    /* Cards */
+    .card {
+      background: #334155;
+      padding: 1.5rem;
+      margin: 1rem auto;
+      border-radius: 12px;
+      max-width: 700px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      background: #475569;
+    }
+
+    /* Profile Image */
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      margin: 1rem 0;
+      border: 3px solid #38bdf8;
+      box-shadow: 0 0 20px #38bdf8;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .skill {
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+    .skill:hover {
+      transform: scale(1.1) rotate(-2deg);
+      background: #fbbf24;
+      color: #0f172a;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #0f172a;
+      color: #94a3b8;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Hero -->
+  <header>
+    <h1 class="logo">Mahesh Sathe</h1>
+    <p class="tagline">Full Stack Web Developer | Programmer | Learner</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="./WhatsApp Image 2025-08-01 at 3.52.17 PM.jpeg" alt="Mahesh Sathe" class="profile-img">
+    <p class="card">
+      Hello! I am Mahesh Sathe, a Computer Engineering student. I love building websites, coding in C, SQL, and JavaScript, and learning new technologies.
+    </p>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>SSC – Maharani Usharaje Holkar School, Chandwad</h3>
+      <p><strong>Percentage:</strong> 81% (2019)</p>
+      <h3>HSC – Maharani Usharaje Holkar Junior College, Chandwad</h3>
+      <p><strong>Percentage:</strong> 81% (2021)</p>
+      <h3>B.E – S.N.D College of Engineering & Research Centre, Yeola</h3>
+      <p><strong>CGPA:</strong> 7.03 (2025)</p>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Web Developer Intern</h3>
+      <p><strong>Sunanda Infotech Pvt Ltd, Nashik</strong> (Dec 2023 – Jan 2024)</p>
+      <p>Completed internship in Web Development. Gained knowledge of frontend and backend technologies.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">C Programming</div>
+      <div class="skill">SQL</div>
+      <div class="skill">Git & GitHub</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Deepfake Video Detection Using Machine Learning</h3>
+      <p>Role: Machine Learning Developer</p>
+      <p>Tech Stack: Python, Flask, TensorFlow, Keras, OpenCV</p>
+      <p>Built hybrid model using ResNeXt50 & LSTM. Developed Flask web app with real-time video detection.</p>
+    </div>
+    <div class="card">
+      <h3>Weather Web App</h3>
+      <p>A web app that shows live weather data using an API.</p>
+    </div>
+    <div class="card">
+      <h3>Student Record System</h3>
+      <p>A C program to manage student records with file storage.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><i class="fa-solid fa-envelope"></i> 
+      <a href="mailto:maheshsathe975@gmail.com">maheshsathe975@gmail.com</a>
+    </p>
+    <p><i class="fa-brands fa-github"></i> 
+      <a href="https://github.com/Maheshsathe021" target="_blank">github.com/Maheshsathe021</a>
+    </p>
+    <p><i class="fa-brands fa-linkedin"></i> 
+      <a href="https://www.linkedin.com/in/mahesh-sathe-3b4b6299" target="_blank">linkedin.com/in/mahesh-sathe-3b4b6299</a>
+    </p>
+    <p><i class="fa-brands fa-square-whatsapp"></i> 
+      <a href="https://wa.me/917499454484" target="_blank">Chat on WhatsApp</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Mahesh Sathe. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Scroll Animation -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          sec.classList.add("show");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
